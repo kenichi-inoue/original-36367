@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   belongs_to :shipping_burden
   belongs_to :shipping_area
   belongs_to :days_to_ship
-    
+
   belongs_to :user
   has_one :purchase
   has_one_attached :image
@@ -27,5 +27,4 @@ class Product < ApplicationRecord
   validates :shipping_burden_id, numericality: { other_than: 1, message: 'is not included in the list' }
   validates :shipping_area_id, numericality: { other_than: 1, message: 'is not included in the list' }
   validates :days_to_ship_id, numericality: { other_than: 1, message: 'is not included in the list' }
-  
 end
