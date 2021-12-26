@@ -5,4 +5,8 @@ class PurchasesController < ApplicationController
     @purchase_ship = PurchaseShip.new
   end
 
+  def create
+    binding.pry
+  end
+
 end
