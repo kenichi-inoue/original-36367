@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_product, only: [:show]
 
   def index
     @products = Product.all
@@ -18,6 +19,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def product_params
@@ -25,4 +29,9 @@ class ProductsController < ApplicationController
                                     :shipping_burden_id, :shipping_area_id, :days_to_ship_id, :image, :purchase_price)
           .merge(user_id: current_user.id)
   end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
 end
