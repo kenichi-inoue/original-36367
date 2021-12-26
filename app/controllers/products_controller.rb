@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :edit, :update]
+  before_action :move_to_index, except: [:index, :show, :new, :create]
 
   def index
     @products = Product.all
@@ -22,6 +23,17 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @product.update(product_params)
+      redirect_to product_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def product_params
@@ -32,6 +44,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless current_user.id == @product.user_id
   end
 
 end
