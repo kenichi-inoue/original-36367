@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :set_product_id, only: [:index, :create]
+  before_action :move_to_index_two, only: [:index]
 
   def index
     # フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
@@ -39,4 +40,11 @@ class PurchasesController < ApplicationController
   def set_product_id
     @product = Product.find(params[:product_id])
   end
+
+  def move_to_index_two
+    return redirect_to new_user_session_path unless user_signed_in?
+    return redirect_to root_path if @product.purchase.present?
+    redirect_to root_path if current_user.id == @product.user_id
+  end
+
 end
