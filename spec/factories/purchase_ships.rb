@@ -6,6 +6,6 @@ FactoryBot.define do
     street { '桂' }
     building { 'コーポ' }
     phone { '07539453333' }
-    # token { '01234567' }
+    token { '01234567' }
   end
 end
