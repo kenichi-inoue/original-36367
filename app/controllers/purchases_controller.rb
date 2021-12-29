@@ -10,6 +10,7 @@ class PurchasesController < ApplicationController
     # binding.pry
     @purchase_ship = PurchaseShip.new(purchase_params)
     if @purchase_ship.valid?
+      pay_item      
       @purchase_ship.save
       redirect_to root_path
     else
@@ -22,6 +23,16 @@ class PurchasesController < ApplicationController
   def purchase_params
     params.require(:purchase_ship).permit(:postal_code, :shipping_area_id, :city, :street, :building, :phone).merge(
       user_id: current_user.id, token: params[:token], product_id: params[:product_id]
+    )
+  end
+
+  def pay_item
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+
+    Payjp::Charge.create(
+      amount: @product.purchase_price,
+      card: purchase_params[:token], # カードトークン
+      currency: 'jpy'                 # 通貨の種類（日本円）
     )
   end
 
