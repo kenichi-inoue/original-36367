@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   before_action :set_product_id, only: [:index, :create]
 
   def index
-    # フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
+    #フォームオブジェクトのインスタンスを生成し、インスタンス変数に代入する
     @purchase_ship = PurchaseShip.new
   end
 
@@ -20,9 +20,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase_ship).permit(:postal_code, :shipping_area_id, :city, :street, :building, :phone).merge(
-      user_id: current_user.id, token: params[:token], product_id: params[:product_id]
-    )
+    params.require(:purchase_ship).permit(:postal_code,:shipping_area_id,:city,:street,:building, :phone).merge(user_id: current_user.id, product_id: params[:product_id])
   end
 
   def set_product_id

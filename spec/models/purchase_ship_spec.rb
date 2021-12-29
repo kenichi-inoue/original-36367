@@ -80,23 +80,24 @@ RSpec.describe PurchaseShip, type: :model do
         expect(@purchase_ship.errors.full_messages).to include('Phone is valid only for half-width number')
       end
 
-      it 'tokenが必須であること' do
-        @purchase_ship.token = ''
-        @purchase_ship.valid?
-        expect(@purchase_ship.errors.full_messages).to include("Token can't be blank")
-      end
+      # it 'tokenが必須であること' do
+      #   @purchase_ship.token = '' 
+      #   @purchase_ship.valid?
+      #   expect(@purchase_ship.errors.full_messages).to include("Token can't be blank")
+      # end
 
       it 'ユーザーが紐付いていること' do
         @purchase_ship.user_id = nil
         @purchase_ship.valid?
         expect(@purchase_ship.errors.full_messages).to include("User can't be blank")
       end
-
+      
       it '商品が紐付いていること' do
         @purchase_ship.product_id = nil
         @purchase_ship.valid?
         expect(@purchase_ship.errors.full_messages).to include("Product can't be blank")
       end
+
     end
   end
 end
