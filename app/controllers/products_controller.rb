@@ -59,5 +59,4 @@ class ProductsController < ApplicationController
   def move_to_index_three
     redirect_to root_path if @product.purchase.present? && user_signed_in? && (current_user.id == @product.user_id)
   end
-
 end

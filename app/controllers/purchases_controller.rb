@@ -11,7 +11,7 @@ class PurchasesController < ApplicationController
     # binding.pry
     @purchase_ship = PurchaseShip.new(purchase_params)
     if @purchase_ship.valid?
-      pay_item      
+      pay_item
       @purchase_ship.save
       redirect_to root_path
     else
@@ -44,7 +44,7 @@ class PurchasesController < ApplicationController
   def move_to_index_two
     return redirect_to new_user_session_path unless user_signed_in?
     return redirect_to root_path if @product.purchase.present?
+
     redirect_to root_path if current_user.id == @product.user_id
   end
-
 end
