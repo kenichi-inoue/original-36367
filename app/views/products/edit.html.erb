@@ -48,7 +48,7 @@ app/assets/stylesheets/items/new.css %>
       <div class="weight-bold-text">受験校の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          受験区分
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:product_category_id, ProductCategory.all,  :id, :name, {}, {class:"select-box", id:"item-category"}) %>
