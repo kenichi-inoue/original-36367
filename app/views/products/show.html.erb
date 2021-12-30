@@ -8,13 +8,13 @@
     </h2>
     <div class="item-img-content">
       <%= image_tag @product.image, class:"item-box-img" %>
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
+      <%# 商品が売れている場合は、passedを表示しましょう %>
         <% if @product.purchase.present? %>
           <div class="sold-out">
-            <span>Sold Out!!</span>
+            <span>Passed</span>
           </div>
         <% end %>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
+      <%# //商品が売れている場合は、passedを表示しましょう %>
 
     </div>
     <div class="item-price-box">
@@ -50,7 +50,7 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
+          <th class="detail-item">情報収集・提供</th>
           <td class="detail-value">
           <%= @product.user.nickname %>
           </td>
