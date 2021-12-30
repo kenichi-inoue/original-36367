@@ -72,7 +72,7 @@
 
 /* /共通 */
 
-/* 商品画像 */
+/* 受験校画像 */
 .img-upload {
   display: flex;
   justify-content: space-between;
@@ -89,9 +89,9 @@
   margin-bottom: 15px;
 }
 
-/* /商品画像 */
+/* /受験校画像 */
 
-/* 商品名と商品説明 */
+/* 受験校と商品説明 */
 .new-items {
   padding: 2vh 0;
 }
@@ -109,9 +109,9 @@
   margin-top: 2vh;
 }
 
-/* /商品名と商品説明 */
+/* /受験校と商品説明 */
 
-/* 商品の詳細など */
+/* 受験校の詳細など */
 .items-detail {
   display: flex;
   justify-content: space-between;
@@ -127,7 +127,7 @@
   margin: 2vh 0;
 }
 
-/* /商品の詳細など */
+/* /受験校の詳細など */
 
 /* 販売価格 */
 .sell-price {

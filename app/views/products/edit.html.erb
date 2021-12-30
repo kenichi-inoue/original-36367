@@ -3,18 +3,18 @@ app/assets/stylesheets/items/new.css %>
 
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%= link_to image_tag('juken-logo-black.png' , size: '185x50'), "/" %>
   </header>
   <div class="items-sell-main">
-    <h2 class="items-sell-title">商品の情報を入力</h2>
+    <h2 class="items-sell-title">受験校の情報を入力</h2>
     <%= form_with model:@product,local: true do |f| %>
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
         <%= render 'shared/error_messages', model: @product %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# 商品画像 %>
+    <%# 受験校画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
-        商品画像
+        受験校画像
         <span class="indispensable">必須</span>
       </div>
       <div class="click-upload">
@@ -24,31 +24,31 @@ app/assets/stylesheets/items/new.css %>
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    <%# /商品画像 %>
+    <%# /受験校画像 %>
 
-    <%# 商品名と商品説明 %>
+    <%# 受験校と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+        受験校
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :product_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :product_name, class:"items-text", id:"item-name", placeholder:"受験校（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          商品の説明
+          受験校の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :product_discription, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :product_discription, class:"items-text", id:"item-info", placeholder:"受験校の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
+    <%# /受験校と商品説明 %>
 
-    <%# 商品の詳細 %>
+    <%# 受験校の詳細 %>
     <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
+      <div class="weight-bold-text">受験校の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
-          カテゴリー
+          受験区分
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:product_category_id, ProductCategory.all,  :id, :name, {}, {class:"select-box", id:"item-category"}) %>
@@ -59,7 +59,7 @@ app/assets/stylesheets/items/new.css %>
         <%= f.collection_select(:product_condition_id, ProductCondition.all,  :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
-    <%# /商品の詳細 %>
+    <%# /受験校の詳細 %>
 
     <%# 配送について %>
     <div class="items-detail">
@@ -152,7 +152,7 @@ app/assets/stylesheets/items/new.css %>
       <li><a href="#">フリマ利用規約</a></li>
       <li><a href="#">特定商取引に関する表記</a></li>
     </ul>
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%= link_to image_tag('juken-logo-black.png' , size: '185x50'), "/" %>
     <p class="inc">
       ©︎Furima,Inc.
     </p>

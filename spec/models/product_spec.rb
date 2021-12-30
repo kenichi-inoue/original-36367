@@ -13,7 +13,7 @@ RSpec.describe Product, type: :model do
     end
 
     context '商品情報入力できない場合' do
-      it '商品名が必須であること' do
+      it '受験校が必須であること' do
         @product.product_name = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Product name can't be blank")
@@ -25,13 +25,13 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include("Product discription can't be blank")
       end
 
-      it 'カテゴリーの情報が必須であること' do
+      it '受験区分の情報が必須であること' do
         @product.product_category_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Product category can't be blank")
       end
 
-      it 'カテゴリーに「--」が選択されていないこと' do
+      it '受験区分に「--」が選択されていないこと' do
         @product.product_category_id = '--'
         @product.valid?
         expect(@product.errors.full_messages).to include('Product category is not included in the list')
@@ -109,13 +109,13 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include
       end
 
-      it '商品画像を1枚つけることが必須であること' do
+      it '受験校画像を1枚つけることが必須であること' do
         @product.image = nil
         @product.valid?
         expect(@product.errors.full_messages).to include("Image can't be blank")
       end
 
-      it 'カテゴリーの情報が必須であること' do
+      it '受験区分の情報が必須であること' do
         @product.product_category_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Product category can't be blank")
