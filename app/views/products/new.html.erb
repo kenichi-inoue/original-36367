@@ -40,9 +40,15 @@
     </div>
     <%# /受験校と商品説明 %>
 
+
+
+
     <%# 受験の難易度 %>
     <div class="items-detail">
-      <div class="weight-bold-text">受験の難易度</div>
+      <div class="weight-bold-text question-text">
+        <span>受験の難易度</span>
+        <a class="question" href="https://xn--0kq33cz5c8wmwrqqw1d.com/?p=202">?</a>
+      </div>
       <div class="form">
         <div class="weight-bold-text">
           受験区分
@@ -54,22 +60,21 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:product_condition_id, ProductCondition.all,  :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
-      </div>
+         <div class="weight-bold-text">
+          共通テストボーダー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:shipping_burden_id, ShippingBurden.all,  :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+     </div>
     </div>
     <%# /受験の難易度 %>
 
     <%# 受験会場 %>
     <div class="items-detail">
-      <div class="weight-bold-text question-text">
-        <span>受験会場</span>
-        <a class="question" href="#">?</a>
-      </div>
+
+         <div class="weight-bold-text">受験会場</div>
+
       <div class="form">
-        <div class="weight-bold-text">
-          共通テストボーダー
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:shipping_burden_id, ShippingBurden.all,  :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           試験場の場所
           <span class="indispensable">必須</span>
@@ -88,7 +93,7 @@
     <div class="sell-price">
       <div class="weight-bold-text question-text">
         <span>学納金等 総計<br>(¥3,500,000〜45,500,000)</span>
-        <a class="question" href="#">?</a>
+        <a class="question" href="https://xn--0kq33cz5c8wmwrqqw1d.com/?p=214">?</a>
       </div>
       <div>
         <div class="price-content">
@@ -99,7 +104,7 @@
           <span class="sell-yen">¥</span>
           <%= f.text_field :purchase_price, class:"price-input", id:"item-price", placeholder:"例）300" %>
         </div>
-        <div class="price-content">
+        <%# <div class="price-content">
           <span>販売手数料 (10%)</span>
           <span>
             <span id='add-tax-price'></span>円
@@ -110,7 +115,7 @@
           <span>
             <span id='profit'></span>円
         </div>
-        </span>
+        </span> %>
       </div>
     </div>
     <%# /学納金等 %>

@@ -18,7 +18,7 @@ class Product < ApplicationRecord
   validates :shipping_area_id, presence: true
   validates :days_to_ship_id, presence: true
   validates :purchase_price, presence: true
-  validates_inclusion_of :purchase_price, in: 300..9_999_999
+  validates_inclusion_of :purchase_price, in: 300..99_999_999
 
   validates :image, presence: true
 
