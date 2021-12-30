@@ -85,25 +85,25 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include('Days to ship is not included in the list')
       end
 
-      it '価格の情報が必須であること' do
+      it '金額の情報が必須であること' do
         @product.purchase_price = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Purchase price can't be blank")
       end
 
-      it '価格は、¥299以下では保存できないこと' do
+      it '金額は、¥299以下では保存できないこと' do
         @product.purchase_price = '200'
         @product.valid?
         expect(@product.errors.full_messages).to include('Purchase price is not included in the list')
       end
 
-      it '価格は、¥9,999,999超では保存できないこと' do
+      it '金額は、¥9,999,999超では保存できないこと' do
         @product.purchase_price = '200000000'
         @product.valid?
         expect(@product.errors.full_messages).to include('Purchase price is not included in the list')
       end
 
-      it '価格は半角数値のみ保存可能であること。' do
+      it '金額は半角数値のみ保存可能であること。' do
         @product.purchase_price = '300b'
         @product.valid?
         expect(@product.errors.full_messages).to include
