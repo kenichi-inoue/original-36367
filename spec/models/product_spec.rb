@@ -37,19 +37,19 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include('Product category is not included in the list')
       end
 
-      it '商品の状態の情報が必須であること。' do
+      it '偏差値の情報が必須であること。' do
         @product.product_condition_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Product condition can't be blank")
       end
 
-      it '商品の状態に「--」が選択されていないこと' do
+      it '偏差値に「--」が選択されていないこと' do
         @product.product_condition_id = '--'
         @product.valid?
         expect(@product.errors.full_messages).to include('Product condition is not included in the list')
       end
 
-      it '配送料の負担の情報が必須であること' do
+      it '共通テストボーダーの情報が必須であること' do
         @product.shipping_burden_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Shipping burden can't be blank")
@@ -61,25 +61,25 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include('Shipping burden is not included in the list')
       end
 
-      it '発送元の地域の情報が必須であること' do
+      it '試験場の場所の情報が必須であること' do
         @product.shipping_area_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Shipping area can't be blank")
       end
 
-      it '発送元の地域に「--」が選択されていないこと' do
+      it '試験場の場所に「--」が選択されていないこと' do
         @product.shipping_area_id = '--'
         @product.valid?
         expect(@product.errors.full_messages).to include('Shipping area is not included in the list')
       end
 
-      it '発送までの日数の情報が必須であること' do
+      it '宿泊要否（の情報が必須であること' do
         @product.days_to_ship_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Days to ship can't be blank")
       end
 
-      it '発送までの日数に「--」が選択されていないこと' do
+      it '宿泊要否（前泊・に「--」が選択されていないこと' do
         @product.days_to_ship_id = '--'
         @product.valid?
         expect(@product.errors.full_messages).to include('Days to ship is not included in the list')

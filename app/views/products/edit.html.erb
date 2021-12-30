@@ -43,9 +43,9 @@ app/assets/stylesheets/items/new.css %>
     </div>
     <%# /受験校と商品説明 %>
 
-    <%# 受験校の詳細 %>
+    <%# 受験の難易度 %>
     <div class="items-detail">
-      <div class="weight-bold-text">受験校の詳細</div>
+      <div class="weight-bold-text">受験の難易度</div>
       <div class="form">
         <div class="weight-bold-text">
           受験区分
@@ -53,44 +53,44 @@ app/assets/stylesheets/items/new.css %>
         </div>
         <%= f.collection_select(:product_category_id, ProductCategory.all,  :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
-          商品の状態
+          偏差値
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:product_condition_id, ProductCondition.all,  :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
-    <%# /受験校の詳細 %>
+    <%# /受験の難易度 %>
 
-    <%# 配送について %>
+    <%# 受験会場 %>
     <div class="items-detail">
       <div class="weight-bold-text question-text">
-        <span>配送について</span>
+        <span>受験会場</span>
         <a class="question" href="#">?</a>
       </div>
       <div class="form">
         <div class="weight-bold-text">
-          配送料の負担
+          共通テストボーダー
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:shipping_burden_id, ShippingBurden.all,  :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
-          発送元の地域
+          試験場の場所
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:shipping_area_id, ShippingArea.all,  :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
         <div class="weight-bold-text">
-          発送までの日数
+          宿泊要否（前泊・後泊）
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:days_to_ship_id, DaysToShip.all,  :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
-    <%# /配送について %>
+    <%# /受験会場 %>
 
-    <%# 販売価格 %>
+    <%# 学納金 %>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
+        <span>学納金等<br>(¥300〜9,999,999)</span>
         <a class="question" href="#">?</a>
       </div>
       <div>
@@ -116,7 +116,7 @@ app/assets/stylesheets/items/new.css %>
         </div>
       </div>
     </div>
-    <%# /販売価格 %>
+    <%# /学納金等 総計 %>
 
     <%# 注意書き %>
     <div class="caution">
