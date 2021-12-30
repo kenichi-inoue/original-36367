@@ -111,7 +111,7 @@
 
 /* /受験校と商品説明 */
 
-/* 受験校の詳細など */
+/* 受験の難易度など */
 .items-detail {
   display: flex;
   justify-content: space-between;
@@ -127,9 +127,9 @@
   margin: 2vh 0;
 }
 
-/* /受験校の詳細など */
+/* /受験の難易度など */
 
-/* 販売価格 */
+/* 学納金等 総計 */
 .sell-price {
   display: flex;
   justify-content: space-between;
@@ -161,7 +161,7 @@
   padding-right: 10px;
 }
 
-/* /販売価格 */
+/* /学納金等 総計 */
 
 /* 注意書き */
 .caution {

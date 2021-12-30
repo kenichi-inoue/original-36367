@@ -8,13 +8,13 @@
     </h2>
     <div class="item-img-content">
       <%= image_tag @product.image, class:"item-box-img" %>
-      <%# 商品が売れている場合は、sold outを表示しましょう %>
+      <%# 商品が売れている場合は、passedを表示しましょう %>
         <% if @product.purchase.present? %>
           <div class="sold-out">
-            <span>Sold Out!!</span>
+            <span>Passed</span>
           </div>
         <% end %>
-      <%# //商品が売れている場合は、sold outを表示しましょう %>
+      <%# //商品が売れている場合は、passedを表示しましょう %>
 
     </div>
     <div class="item-price-box">
@@ -29,7 +29,7 @@
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? && (current_user.id == @product.user_id && !@product.purchase.present?)   %>
 
-    <%= link_to "商品の編集", edit_product_path, method: :get, class: "item-red-btn" %>
+    <%= link_to "受験校情報の編集", edit_product_path, method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
     <%= link_to "削除", product_path, method: :delete, class:"item-destroy" %>
 
@@ -50,7 +50,7 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
+          <th class="detail-item">情報収集・提供</th>
           <td class="detail-value">
           <%= @product.user.nickname %>
           </td>
@@ -62,25 +62,25 @@
           </td>
         </tr>
         <tr>
-          <th class="detail-item">商品の状態</th>
+          <th class="detail-item">偏差値</th>
           <td class="detail-value">
           <%= @product.product_condition.name %>
           </td>
         </tr>
         <tr>
-          <th class="detail-item">配送料の負担</th>
+          <th class="detail-item">共通テストボーダー</th>
           <td class="detail-value">
           <%= @product.shipping_burden.name %>
           </td>
         </tr>
         <tr>
-          <th class="detail-item">発送元の地域</th>
+          <th class="detail-item">試験場の場所</th>
           <td class="detail-value">
           <%= @product.shipping_area.name %>
           </td>
         </tr>
         <tr>
-          <th class="detail-item">発送日の目安</th>
+          <th class="detail-item">宿泊要否</th>
           <td class="detail-value">
           <%= @product.days_to_ship.name %>
           </td>
@@ -94,7 +94,7 @@
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
+        <span>誤った記載の通報</span>
       </div>
     </div>
   </div>
@@ -104,9 +104,11 @@
     <form>
       <textarea class="comment-text"></textarea>
       <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
+        悠さんのことを考え精神的に負担にならないコメントを心がけよう。
         <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        もう十分に頑張っています
+        <br>
+        安心して試験に臨めるといいね。
       </p>
       <button type="submit" class="comment-btn">
         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
@@ -116,10 +118,10 @@
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
-      ＜ 前の商品
+      ＜ 前の受験校
     </a>
     <a href="#" class="change-item-btn">
-      後ろの商品 ＞
+      後ろの受験校 ＞
     </a>
   </div>
   <a href="#" class="another-item">

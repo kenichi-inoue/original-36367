@@ -27,7 +27,7 @@
     <ul class='reason-lists'>
       <li class='list'>
         <%= image_tag "juken-intro01.png", class:"list-pict" %>
-        <span class='reason-list-number'>壱</span>
+        <%# <span class='reason-list-number'>壱</span> %>
         <h3 class='reason-list-text'>
           <span class='reason-list-blue-text'>時間</span>
           自由自在
@@ -38,7 +38,7 @@
       </li>
       <li class='list'>
         <%= image_tag "juken-intro02.png", class:"list-pict" %>
-        <span class='reason-list-number'>弐</span>
+        <%# <span class='reason-list-number'>弐</span> %>
         <h3 class='reason-list-text'>
           <span class='reason-list-blue-text'>お金</span>
           将来安泰
@@ -49,7 +49,7 @@
       </li>
       <li class='list'>
         <%= image_tag "juken-intro03.png", class:"list-pict" %>
-        <span class='reason-list-number'>参</span>
+        <%# <span class='reason-list-number'>参</span> %>
         <h3 class='reason-list-text'>
         <span class='reason-list-blue-text'>夢</span>
           理想の自分
@@ -136,13 +136,13 @@
 
         <div class='item-img-content'>
           <%= link_to image_tag(product.image, class: "item-img" ), product_path(product.id), method: :get  %>
-          <%# 商品が売れていればsold outを表示しましょう %>
+          <%# 商品が売れていればpassedを表示しましょう %>
           <% if product.purchase.present? %>
             <div class='sold-out'>
-              <span>Sold Out!! </span>
+              <span>Passed </span>
             </div>
           <% end %>
-          <%# //商品が売れていればsold outを表示しましょう %>
+          <%# //商品が売れていればpassedを表示しましょう %>
 
         </div>
         <div class='item-info'>
@@ -172,10 +172,10 @@
       <% if @products.length == 0 %>
 
         <%= link_to '#' do %>
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+        <%= image_tag "icon-univ.png", class: "item-img" %>
         <div class='item-info'>
           <h3 class='item-name'>
-            商品を出品してね！
+            受験したい学校をお父さんに言ってください
           </h3>
           <div class='item-price'>
             <span>99999999円<br>(税込み)</span>
@@ -197,6 +197,6 @@
 </div>
 <%= link_to('/products/new', class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>受験校追加</span>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <%= image_tag 'icon-univ.png' , size: '185x75' ,class: "purchase-btn-icon" %>
 <% end %>
 <%= render "shared/footer" %>
