@@ -9,7 +9,8 @@
     <div class="item-img-content">
       <%= image_tag @product.image, class:"item-box-img" %>
       <%# 商品が売れている場合は、passedを表示しましょう %>
-        <% if @product.purchase.present? %>
+      <%# <% if product.purchase.present? %>
+      <% if @product.days_to_ship_id == 2 %>
           <div class="sold-out">
             <span>Passed</span>
           </div>
@@ -19,12 +20,13 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        ¥ <%= @product.purchase_price %>
+        <%# ¥ <%= @product.purchase_price %>
+        <%= @product.product_category.name %>
       </span>
-      <span class="item-postage">
-        <%= @product.shipping_burden.name %>
-
-      </span>
+      <%# <span class="item-postage"> %>
+        <%# <%= @product.shipping_burden.name  %>
+        <%# 偏差値  <%= @product.product_condition.name %>
+      <%# </span>  %>
     </div>
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? && (current_user.id == @product.user_id && !@product.purchase.present?)   %>
@@ -33,12 +35,12 @@
     <p class="or-text">or</p>
     <%= link_to "削除", product_path, method: :delete, class:"item-destroy" %>
 
-    <% elsif user_signed_in? && (current_user.id != @product.user_id)   %>
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-      <% if !@product.purchase.present? %>
-        <%= link_to "購入画面に進む", product_purchases_path(@product.id), class:"item-red-btn"%>
-      <% end %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
+    <%# <% elsif user_signed_in? && (current_user.id != @product.user_id)   % %>
+    <%# 商品が売れていない場合はこちらを表示しましょう ＃購入ページへのシフトを回避＃%>
+      <%# <% if !@product.purchase.present? % %>
+        <%# <%= link_to "合格確定", product_purchases_path(@product.id), class:"item-red-btn"% %>
+      <%# <% end  %>
+    <%# //商品が売れていない場合はこちらを表示しましょう ＃購入ページへのシフトを回避＃%>
     <% end %>
     <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
@@ -50,15 +52,15 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">情報収集・提供</th>
-          <td class="detail-value">
-          <%= @product.user.nickname %>
-          </td>
-        </tr>
-        <tr>
           <th class="detail-item">受験区分</th>
           <td class="detail-value">
           <%= @product.product_category.name %>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-item">学納金 総計</th>
+          <td class="detail-value">
+          ¥<%= @product.purchase_price %>k
           </td>
         </tr>
         <tr>
@@ -80,9 +82,15 @@
           </td>
         </tr>
         <tr>
-          <th class="detail-item">宿泊要否</th>
+          <th class="detail-item">受験の状況</th>
           <td class="detail-value">
           <%= @product.days_to_ship.name %>
+          </td>
+        </tr>
+        <tr>
+          <th class="detail-item">情報収集・提供</th>
+          <td class="detail-value">
+          <%= @product.user.nickname %>
           </td>
         </tr>
       </tbody>

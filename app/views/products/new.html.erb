@@ -71,17 +71,22 @@
 
     <%# 受験会場 %>
     <div class="items-detail">
-
          <div class="weight-bold-text">受験会場</div>
-
       <div class="form">
         <div class="weight-bold-text">
           試験場の場所
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:shipping_area_id, ShippingArea.all,  :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
-        <div class="weight-bold-text">
-          宿泊要否（前泊・後泊）
+       </div>
+    </div>
+    <%# /受験会場 %>
+        <%# 受験会場 %>
+    <div class="items-detail">
+         <div class="weight-bold-text">現状</div>
+      <div class="form">
+         <div class="weight-bold-text">
+          受験の状況
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:days_to_ship_id, DaysToShip.all,  :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
@@ -92,7 +97,7 @@
     <%# 学納金等 総計 %>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
-        <span>学納金等 総計<br>(¥3,500,000〜45,500,000)</span>
+        <span>学納金等 総計<br>(¥3,500k〜45,500k)</span>
         <a class="question" href="https://xn--0kq33cz5c8wmwrqqw1d.com/?p=214">?</a>
       </div>
       <div>
@@ -102,7 +107,7 @@
             <span class="indispensable">必須</span>
           </div>
           <span class="sell-yen">¥</span>
-          <%= f.text_field :purchase_price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+          <%= f.text_field :purchase_price, class:"price-input", id:"item-price", placeholder:"例）300" %>k
         </div>
         <%# <div class="price-content">
           <span>販売手数料 (10%)</span>

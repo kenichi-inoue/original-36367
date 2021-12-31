@@ -8,11 +8,12 @@ class ProductCategory < ActiveHash::Base
     { id: 6, name: '一般 後期 1次' },
     { id: 7, name: '一般 前期 2次' },
     { id: 8, name: '一般 後期 2次' },
-    { id: 9, name: 'その他' },
+    { id: 9, name: '国公立 前期 2次' },
     # { id: 8, name: '家電・スマホ・カメラ' },
     # { id: 9, name: 'スポーツ・レジャー' },
     # { id: 10, name: 'ハンドメイド' },
-    { id: 10, name: 'その他' }
+    { id: 10, name: '国公立 後期 2次' },
+    { id: 11, name: 'その他' }
   ]
 
   include ActiveHash::Associations

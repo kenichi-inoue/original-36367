@@ -137,7 +137,8 @@
         <div class='item-img-content'>
           <%= link_to image_tag(product.image, class: "item-img" ), product_path(product.id), method: :get  %>
           <%# 商品が売れていればpassedを表示しましょう %>
-          <% if product.purchase.present? %>
+          <%# <% if product.purchase.present? %>
+          <% if product.days_to_ship_id == 2 %>
             <div class='sold-out'>
               <span>Passed </span>
             </div>
@@ -150,9 +151,11 @@
             <%= product.product_name %>
           </h3>
           <div class='item-price'>
-            <span><%= product.purchase_price %>円
+            <%# <span><%= product.purchase_price 円 #一覧に受験区分を追加＃%>
+            <span><%= product.product_category.name %>
             <br>
-            <%= product.shipping_burden.name %>
+            <%# <%= product.shipping_burden.name ＃一覧に偏差値を記載＃%>
+            <%= product.days_to_ship.name %>
             
             </span>
             <div class='star-btn'>

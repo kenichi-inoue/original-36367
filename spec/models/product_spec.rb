@@ -73,13 +73,13 @@ RSpec.describe Product, type: :model do
         expect(@product.errors.full_messages).to include('Shipping area is not included in the list')
       end
 
-      it '宿泊要否（の情報が必須であること' do
+      it '受験の状況の情報が必須であること' do
         @product.days_to_ship_id = ''
         @product.valid?
         expect(@product.errors.full_messages).to include("Days to ship can't be blank")
       end
 
-      it '宿泊要否（前泊・に「--」が選択されていないこと' do
+      it '受験の状況に「--」が選択されていないこと' do
         @product.days_to_ship_id = '--'
         @product.valid?
         expect(@product.errors.full_messages).to include('Days to ship is not included in the list')
