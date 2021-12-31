@@ -245,7 +245,7 @@ a {
 }
 
 .item-lists>.list {
-  width: 37vh;
+  width: 57vh;
   padding: 1vw;
   background-color: #FFF;
 }
@@ -256,8 +256,10 @@ a {
 }
 
 .item-img {
-  width: 33vh;
+  width: 53vh;
   height: 33vh;
+  // min-height: 200px;
+
 }
 
 .sold-out {
@@ -275,7 +277,6 @@ a {
   font: bold;
 }
 
-
 .item-info {
   background-color: #FFF;
   color: black;
@@ -287,7 +288,8 @@ a {
 }
 
 .item-price {
-  font-size: 1.5vh;
+  // font-size: 1.5vh; #偏差値の文字を変更＃
+  font-size: 2vh;
   display: flex;
   justify-content: space-between;
 }

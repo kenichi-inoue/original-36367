@@ -150,9 +150,11 @@
             <%= product.product_name %>
           </h3>
           <div class='item-price'>
-            <span><%= product.purchase_price %>円
+            <%# <span><%= product.purchase_price 円 #一覧に受験区分を追加＃%>
+            <span><%= product.product_category.name %>
             <br>
-            <%= product.shipping_burden.name %>
+            <%# <%= product.shipping_burden.name ＃一覧に偏差値を記載＃%>
+            偏差値  <%= product.product_condition.name %>
             
             </span>
             <div class='star-btn'>

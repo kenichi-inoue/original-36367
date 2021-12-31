@@ -4,7 +4,7 @@
   <div class='transaction-main'>
   
     <h1 class='transaction-title-text'>
-      購入内容の確認
+      合格大学の確認
     </h1>
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
@@ -15,7 +15,7 @@
         </h2>
         <div class='buy-item-price'>
           <p class='item-price-text'>¥<%= @product.purchase_price %></p>
-          <p class='item-price-sub-text'><%= @product.shipping_burden.name %></p>
+          <%# <p class='item-price-sub-text'><%= @product.shipping_burden.name </p> %>
         </div>
       </div>
     </div>
@@ -24,10 +24,10 @@
     <%# 支払額の表示 %>
     <div class='item-payment'>
       <h1 class='item-payment-title'>
-        支払金額
+        学納金 総計
       </h1>
       <p class='item-payment-price'>
-        ¥<%= @product.purchase_price %>
+        ¥<%= @product.purchase_price %>k
       </p>
     </div>
     <%# /支払額の表示 %>
@@ -125,7 +125,7 @@
     </div>
     <%# /配送先の入力 %>
     <div class='buy-btn'>
-      <%= f.submit "購入" ,class:"buy-red-btn", id:"button" %>
+      <%= f.submit "確定" ,class:"buy-red-btn", id:"button" %>
     </div>
     <% end %>
   </div>
