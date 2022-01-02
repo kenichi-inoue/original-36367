@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @product = Product.find(params[:product_id]) #追加
     if @comment.save
-      # CommentChannel.broadcast_to @product, { comment: @comment, user: @comment.user } #追加
-      ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user} #追加
+      CommentChannel.broadcast_to @product, { comment: @comment, user: @comment.user } #追加
+      # ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user} #追加
       # redirect_to product_path(params[:product_id]) #削除
     end
   end
