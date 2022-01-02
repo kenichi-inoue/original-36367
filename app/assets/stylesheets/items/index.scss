@@ -47,12 +47,13 @@ a {
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
 
-/* FURIMAが選ばれる3つの理由部分 */
+/* 今やらなきゃ3つの理由部分 */
 .select-reason-contents {
   padding: 5vh 15vw;
 }
 
 .select-reason-contents>.title {
+  // タイトルの記述 …理由
   text-align: center;
   font-size: 5vh;
   font-weight: bold;
@@ -62,7 +63,8 @@ a {
 
 .select-reason-contents>.title::after {
   content: '';
-  width: 250px;
+  // 文字の下のライン
+  width: 350px;
   height: 4px;
   background-color: #30287aee;
   position: absolute;
@@ -118,10 +120,10 @@ a {
   margin-top: 20px;
 }
 
-/* //FURIMAが選ばれる3つの理由部分 */
+/* //今やらなきゃ損な3つの理由部分 */
 
 
-/* 画面中央の「会員数日本一位」帯部分*/
+/* 画面中央の「人生最大のチャンスを逃すな！」帯部分*/
 .ad-contents {
   width: 100vw;
   background-image: image-url('juken-header02.png');
@@ -161,7 +163,7 @@ a {
   height: 9vh;
 }
 
-/* //画面中央の「会員数日本一位」帯部分 */
+/* //画面中央の「人生最大のチャンスを逃すな！」帯部分 */
 
 /* FURIMAの特徴 */
 .feature-contents {
@@ -178,7 +180,8 @@ a {
 
 .feature-contents>.title::after {
   content: '';
-  width: 170px;
+  // 文字の下のライン
+  width: 270px;
   height: 4px;
   background-color: #29207eee;
   position: absolute;
