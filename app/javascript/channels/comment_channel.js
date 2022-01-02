@@ -3,7 +3,15 @@ import consumer from "./consumer"
 if(location.pathname.match(/\/products\/\d/)){
   // console.log("読み込み完了")
 
-consumer.subscriptions.create("CommentChannel", {
+  // 以下を追加
+  consumer.subscriptions.create({
+    channel: "CommentChannel",
+    product_id: location.pathname.match(/\d+/)[0]
+  }, {
+
+// 以下を削除
+// consumer.subscriptions.create("CommentChannel", {
+
   connected() {
     // Called when the subscription is ready for use on the server
   },
