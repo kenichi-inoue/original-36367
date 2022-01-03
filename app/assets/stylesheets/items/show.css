@@ -26,9 +26,10 @@
 }
 
 .item-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
+  height: 30vh;
+  /* 詳細の写真の幅を買える */
+  width: 30vw;
+  min-height: 400px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }

@@ -33,7 +33,7 @@
 
     <%= link_to "受験校情報の編集", edit_product_path, method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削除", product_path, method: :delete, class:"item-destroy" %>
+    <%# <%= link_to "削除", product_path, method: :delete, class:"item-destroy" %> #誤って削除しないように一旦、マスク#
 
     <%# <% elsif user_signed_in? && (current_user.id != @product.user_id)   % %>
     <%# 商品が売れていない場合はこちらを表示しましょう ＃購入ページへのシフトを回避＃%>
